@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "corporate-climate-tax-ml"
+version = "1.0.0"
+description = "Corporate Climate Data API, 2°C Carbon Tax Scenario Modeling, and ML Projection Engine"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.31.0",
+    "pandas>=2.1.0",
+    "numpy>=1.26.0",
+    "scikit-learn>=1.3.0",
+    "joblib>=1.3.0",
+    "matplotlib>=3.8.0",
+    "seaborn>=0.13.0",
+    "rich>=13.7.0",
+    "pytest>=8.0.0",
+    "streamlit>=1.31.0",
+]
+
+[project.scripts]
+climate-tax-ml = "main:cli_entrypoint"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
